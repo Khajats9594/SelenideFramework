@@ -1,24 +1,44 @@
 package com.orangehrm.utils;
 
 import com.orangehrm.enums.RandomDataType;
+import com.orangehrm.enums.RandomDataTypeNames;
 import net.datafaker.Faker;
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class RandomDataGenerator {
 
-    private static final Faker faker = new Faker();
-    public static String getRandomFirstName(RandomDataType dataTypeName){
-        return faker.name().firstName();
+    public static Faker faker = new Faker();
+
+    public static String getRandomDataFor(RandomDataTypeNames dataTypesNames) {
+        switch (dataTypesNames) {
+            case FIRSTNAME:
+                return faker.name().firstName();
+            case LASTNAME:
+                return faker.name().lastName();
+            case FULLNAME:
+                return faker.name().fullName();
+            case COUNTRY:
+                return faker.address().country();
+            case CITYNAME:
+                return faker.address().cityName();
+            default:
+                return "Data type name not available";
+        }
     }
-    public static String getRandomLastName(RandomDataType dataTypeName){
-        return faker.name().lastName();
+
+    public static String getRandomNumber(int count) {
+        return faker.number().digits(count);
     }
-    public static String getRandomMiddleName(RandomDataType dataTypeName){
-        return faker.name().nameWithMiddle();
+
+    public static int getRandomNumber(int min, int max) {
+        return faker.number().numberBetween(min, max);
     }
-    public static String getRandomCountyName(RandomDataType dataTypeName){
-        return faker.address().country();
+
+    public static String getRandomAlphabets(int count) {
+        return RandomStringUtils.randomAlphabetic(count);
     }
-    public static String getRandomCityName(RandomDataType dataTypeName){
-        return faker.address().cityName();
+
+    public static String getRandomWebsiteName() {
+        return "https://" + RandomDataGenerator.getRandomAlphabets(10) + ".com";
     }
 }

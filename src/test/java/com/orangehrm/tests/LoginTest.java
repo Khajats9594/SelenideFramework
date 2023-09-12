@@ -1,6 +1,7 @@
 package com.orangehrm.tests;
 
 import com.orangehrm.annotation.FrameworkAnnotation;
+import com.orangehrm.entity.EmployeeDetails;
 import com.orangehrm.entity.LoginDetails;
 import com.orangehrm.pages.LoginPage;
 import com.orangehrm.testdata.LoginTestData;
@@ -29,5 +30,6 @@ public class LoginTest extends BaseTest{
         logger.debug("LoginTestData:getValidLoginDetails request parameters {}",validLoginDetails);
         LoginPage.getInstance()
                 .loginToApplication(validLoginDetails);
+
     }
 }
