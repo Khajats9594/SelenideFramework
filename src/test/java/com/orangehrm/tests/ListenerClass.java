@@ -1,7 +1,6 @@
 package com.orangehrm.tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.codeborne.selenide.testng.TextReport;
 import com.orangehrm.annotation.FrameworkAnnotation;
 import com.orangehrm.utils.DynamicLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -10,7 +9,6 @@ import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.Listeners;
 
 
 public class ListenerClass implements ITestListener, ISuiteListener {

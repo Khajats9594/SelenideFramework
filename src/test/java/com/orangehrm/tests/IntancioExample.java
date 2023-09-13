@@ -1,12 +1,13 @@
 package com.orangehrm.tests;
 
 import com.orangehrm.entity.Airline;
+import com.orangehrm.entity.EmployeeDetails;
 import com.orangehrm.entity.Student;
+import com.orangehrm.testdata.EmployeeTestData;
 import io.qameta.allure.internal.shadowed.jackson.core.JsonProcessingException;
 import io.qameta.allure.internal.shadowed.jackson.databind.ObjectMapper;
 import org.instancio.Instancio;
 import org.instancio.Select;
-
 import java.util.Arrays;
 import java.util.Set;
 
@@ -20,6 +21,16 @@ public class IntancioExample {
 
         Airline airline1 = new Airline().toBuilder().build();
         System.out.println(airline1);
+
+        System.out.println("................................................");
+
+        Airline airline2 = Airline.builder().country("India").build();
+        System.out.println(airline2);
+
+        System.out.println("................................................");
+
+        EmployeeDetails employeeDetails = EmployeeTestData.getRandomEmployeeDetails();
+        System.out.println(employeeDetails);
 
         System.out.println("................................................");
 
