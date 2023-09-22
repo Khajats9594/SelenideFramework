@@ -103,6 +103,7 @@
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -javaagent:/Users/testvagrant/Downloads/elastic-apm-agent-1.42.0.jar -Delastic.apm.config_file=src/test/resources/elasticapm.properties
                     </argLine>
                     <properties>
                         <property>

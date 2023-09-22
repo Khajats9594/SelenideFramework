@@ -21,7 +21,7 @@
         <Logger name="com.selenideFramework" level="debug" additivity="false">
             <AppenderRef ref="LogToRollingFile"/>
         </Logger>
-        <Root level="error">
+        <Root level="info">
             <AppenderRef ref="LogToConsole"/>
             <AppenderRef ref="LogToRollingFile"/>
         </Root>
